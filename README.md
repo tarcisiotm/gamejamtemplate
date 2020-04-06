@@ -1,1 +1,1 @@
-# gamejamtemplate
+# Game Jam Template
