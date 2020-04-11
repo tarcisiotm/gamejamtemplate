@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 using TG.Core;
-using System;
 
 [RequireComponent(typeof(RectTransform))]
 public class PanelFade : SceneTransition {
@@ -31,7 +30,6 @@ public class PanelFade : SceneTransition {
     }
 
     void Start(){
-        //DontDestroyOnLoad(GetComponentInParent<Canvas>().gameObject);
         //FadeIn(2f);
     }
 
@@ -56,20 +54,17 @@ public class PanelFade : SceneTransition {
     }
 
     public void FadeIn(float duration) {
-        //Debug.Log("Fade in");
         Fade(Vector2.zero, duration);
     }
     
     public void FadeOut(float duration) {
-        //var vect2 = Screen.width;
-        //Debug.Log("Fade out");
         Fade(new Vector2(multiplier * size * transform.localScale.x, 0), duration);
         multiplier *= -1;
     }
 
     public void Fade(Vector2 targetPos, float duration){
         RectTransform rt = GetComponent<RectTransform>();
-        rt.DOAnchorPos(targetPos, duration).SetEase(Ease.Linear);
+        rt.DOAnchorPos(targetPos, duration).SetEase(Ease.Linear).SetUpdate(true);
     }
 
 
