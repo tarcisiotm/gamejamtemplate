@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PanelsHandler : MonoBehaviour
 {
-    [SerializeField] GameObject mainMenuPanel;
-    [SerializeField] GameObject[] panels;
+    [SerializeField] GameObject mainMenuPanel = default;
+    [SerializeField] GameObject[] panels = default;
 
     void Start() {}
 

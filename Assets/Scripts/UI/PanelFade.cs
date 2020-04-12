@@ -8,7 +8,7 @@ public class PanelFade : SceneTransition {
 
     [Header("Optional")]
     [Tooltip("Cosmetic object to activate after fade in completes.")]
-    [SerializeField] CanvasGroupFadeComponent activateAfterFadeIn;
+    [SerializeField] CanvasGroupFadeComponent activateAfterFadeIn = default;
 
     [SerializeField] float size = 0;
     int multiplier = -1;

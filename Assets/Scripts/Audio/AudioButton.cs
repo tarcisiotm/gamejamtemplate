@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class AudioButton : MonoBehaviour, IPointerEnterHandler
 {
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip onHover;
+    [SerializeField] AudioSource audioSource = default;
+    [SerializeField] AudioClip onHover = default;
     [SerializeField] float onHoverVolume = .6f;
-    [SerializeField] AudioClip clickClip;
+    [SerializeField] AudioClip clickClip = default;
 
     private void Awake()
     {
+
         Button btn = GetComponent<Button>();
         btn.onClick.AddListener(OnClick);
     }

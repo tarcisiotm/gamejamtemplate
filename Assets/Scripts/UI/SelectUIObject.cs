@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class SelectUIObject : MonoBehaviour
 {
-    [SerializeField] bool onEnable = true;
-    [SerializeField] GameObject gameObjectToSelect;
+    [SerializeField] bool onEnable = true; 
+    [SerializeField] GameObject gameObjectToSelect = default;
 
     private void OnEnable() {
         if (!onEnable) { return; }

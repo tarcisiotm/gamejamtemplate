@@ -1,8 +1,8 @@
 ﻿using TG.Core;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour{
-    [SerializeField] GameObject pausePanel;
+public class PauseMenu : MonoBehaviour {
+    [SerializeField] GameObject pausePanel = default;
 
     bool isPaused = false;
     bool canUpdate = true;
@@ -11,14 +11,13 @@ public class PauseMenu : MonoBehaviour{
     public delegate void PauseEvent(bool pauseStatus);
     public static event PauseEvent OnPauseEvent;
 
-    void Start(){}
+    void Start() { }
 
-    void Update(){
+    void Update() {
         if (!canUpdate) { return; }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (isPaused) { UnpauseGame(); }
-            else { PauseGame(); }
+            if (isPaused) { UnpauseGame(); } else { PauseGame(); }
         }
     }
 
@@ -42,17 +41,13 @@ public class PauseMenu : MonoBehaviour{
 
     public void LoadMainMenu() {
         canUpdate = false;
-        //TODO Core
         //FindObjectOfType<ScenesManager>().LoadMainMenu();
-        Time.timeScale = 1;
     }
 
     public void ReloadScene() {
         if (isLocked) { return; }
         FindObjectOfType<ScenesManager>().ReloadScene();
         isLocked = true;
-        //Make scene transition time unscaled
-        //Time.timeScale = 1;
     }
 
     public void QuitGame() {

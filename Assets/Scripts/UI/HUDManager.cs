@@ -5,11 +5,11 @@ using TMPro;
 
 public class HUDManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI scoreTXT;
-    [SerializeField] TextMeshProUGUI highScoreTXT;
+    [SerializeField] TextMeshProUGUI scoreTXT = default;
+    [SerializeField] TextMeshProUGUI highScoreTXT = default;
 
-    [SerializeField] GameObject extraLife;
-    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject extraLife = default;
+    [SerializeField] GameObject gameOverPanel = default;
 
     const string PLAYER_PREFS_SCORE_KEY = "HighScoreKey";
     int highestScore = 0;
