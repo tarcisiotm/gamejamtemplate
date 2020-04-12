@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2009ece6c791c524c98d04a0fc99cdda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionDuration: 0.5
+  transitionDuration: 1
   beforeFadeOutStallDuration: 1
   fadeDuration: 0.7
   activateAfterFadeIn: {fileID: 7135555560309023491}
@@ -574,9 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9709bd6646cbed34f97d7a628eccd324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usesFade: 1
   minLoadTime: 1
-  minTimeAfterLoaded: 0.1
+  mainMenuSceneBuildIndex: 0
 --- !u!1 &7135555560309023544
 GameObject:
   m_ObjectHideFlags: 0

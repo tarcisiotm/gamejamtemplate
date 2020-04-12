@@ -3,7 +3,7 @@ using DG.Tweening;
 using TG.Core;
 
 [RequireComponent(typeof(RectTransform))]
-public class PanelFade : SceneTransition {
+public class SlidePanelSceneTransition : SceneTransition {
     [SerializeField] float fadeDuration = .3f;
 
     [Header("Optional")]
@@ -45,7 +45,7 @@ public class PanelFade : SceneTransition {
     void OnFadedIn() {
         if(activateAfterFadeIn != null) {
             activateAfterFadeIn.gameObject.SetActive(true);
-            activateAfterFadeIn.FadeIn(BeforeFadeStallDuration);
+            activateAfterFadeIn.FadeIn(BeforeFadeStallDuration/2f);
         }
     }
 
