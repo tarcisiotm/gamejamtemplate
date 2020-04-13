@@ -50,22 +50,23 @@ public class SlidePanelSceneTransition : SceneTransition {
     }
 
     void BeforeFadeOut() {
-        activateAfterFadeIn.FadeOut(BeforeFadeStallDuration);
+        if (activateAfterFadeIn != null) {
+            activateAfterFadeIn.FadeOut(BeforeFadeStallDuration);
+        }
     }
 
-    public void FadeIn(float duration) {
-        Fade(Vector2.zero, duration);
-    }
+    //public void FadeIn(float duration) {
+    //    Fade(Vector2.zero, duration);
+    //}
     
-    public void FadeOut(float duration) {
-        Fade(new Vector2(multiplier * size * transform.localScale.x, 0), duration);
-        multiplier *= -1;
-    }
+    //public void FadeOut(float duration) {
+    //    Fade(new Vector2(multiplier * size * transform.localScale.x, 0), duration);
+    //    multiplier *= -1;
+    //}
 
     public void Fade(Vector2 targetPos, float duration){
         RectTransform rt = GetComponent<RectTransform>();
         rt.DOAnchorPos(targetPos, duration).SetEase(Ease.Linear).SetUpdate(true);
     }
-
 
 }
