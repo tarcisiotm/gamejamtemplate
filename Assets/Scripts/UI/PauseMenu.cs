@@ -41,12 +41,12 @@ public class PauseMenu : MonoBehaviour {
 
     public void LoadMainMenu() {
         canUpdate = false;
-        //FindObjectOfType<ScenesManager>().LoadMainMenu();
+        ScenesManager.I.LoadMainMenu();
     }
 
     public void ReloadScene() {
         if (isLocked) { return; }
-        FindObjectOfType<ScenesManager>().ReloadScene();
+        ScenesManager.I.ReloadScene();
         isLocked = true;
     }
 

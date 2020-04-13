@@ -411,6 +411,12 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &667343070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9117857267283470147, guid: c61097c6196494dbab5cf45768c5e36c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136973170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &736106618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,6 +424,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 701976242650725897, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255408232725365436, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 79e0fa5704d6b443ca1e9a4594108616, type: 3}
     - target: {fileID: 7135555559467506893, guid: 84b6229af678c4c13aa2a99ef46ef28b,
         type: 3}
       propertyPath: m_Name
@@ -1415,6 +1431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587872689}
   - component: {fileID: 1587872688}
+  - component: {fileID: 1587872690}
   m_Layer: 5
   m_Name: UIActions
   m_TagString: Untagged
@@ -1453,6 +1470,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1587872690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587872687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87c3afb1ff8d47e3bd3b15c06a7ada9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnable: 1
+  gameObjectToSelect: {fileID: 667343070}
 --- !u!1 &1633734771
 GameObject:
   m_ObjectHideFlags: 0

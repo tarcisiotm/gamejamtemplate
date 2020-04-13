@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
@@ -6,11 +7,13 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class SelectUIObject : MonoBehaviour
 {
-    [SerializeField] bool onEnable = true; 
+    [SerializeField] bool onStart = true; 
     [SerializeField] GameObject gameObjectToSelect = default;
 
-    private void OnEnable() {
-        if (!onEnable) { return; }
+    IEnumerator Start() {
+        if (!onStart) { yield break; }
+
+        yield return null;
         SelectGameObject();
     }
 

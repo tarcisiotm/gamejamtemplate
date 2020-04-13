@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
 
 public class AudioManager : TG.Core.Audio.AudioManagerBase
@@ -12,7 +10,7 @@ public class AudioManager : TG.Core.Audio.AudioManagerBase
         base.OnSceneIsGoingToLoad(activeSceneBuildIndex, newSceneBuildIndex);
 
         if(bgmAudioSource != null) {
-            bgmAudioSource.DOFade(0, fadeOutTime);
+            bgmAudioSource.DOFade(0, fadeOutTime).SetUpdate(true);
         }
     }
 }
