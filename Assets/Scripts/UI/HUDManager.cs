@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Handles a HUD
+/// </summary>
 public class HUDManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreTXT = default;

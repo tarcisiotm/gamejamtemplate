@@ -4,6 +4,9 @@ using TG.Core;
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// A simple scene transition with fade-in and out
+/// </summary>
 [RequireComponent(typeof(CanvasGroup))]
 public class FadeSceneTransition : SceneTransition
 {

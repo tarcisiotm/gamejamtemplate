@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// A simple BGM handler script to change the music
+/// </summary>
 public class ChangeBGMOnEnable : MonoBehaviour
 {
     [SerializeField] AudioClip bgmClip = default;
@@ -16,8 +17,4 @@ public class ChangeBGMOnEnable : MonoBehaviour
         PlayBGM();
     }
 
-    void Update()
-    {
-        
-    }
 }

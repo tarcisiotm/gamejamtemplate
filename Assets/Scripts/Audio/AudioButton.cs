@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Provides functionality for audio playback on UI buttons
+/// </summary>
 public class AudioButton : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] AudioSource audioSource = default;

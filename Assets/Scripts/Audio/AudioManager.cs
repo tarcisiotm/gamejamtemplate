@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// A manager for fading audio, creating new instances, etc
+/// </summary>
 public class AudioManager : TG.Core.Audio.AudioManagerBase
 {
     [Header("Settings")]

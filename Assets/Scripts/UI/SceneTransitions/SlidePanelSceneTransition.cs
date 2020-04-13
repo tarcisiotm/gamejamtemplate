@@ -2,6 +2,9 @@
 using DG.Tweening;
 using TG.Core;
 
+/// <summary>
+/// Slide from the side scene transition
+/// </summary>
 [RequireComponent(typeof(RectTransform))]
 public class SlidePanelSceneTransition : SceneTransition {
     [SerializeField] float fadeDuration = .3f;
