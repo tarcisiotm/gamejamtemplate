@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the activation of panels in a UI
+/// </summary>
 public class PanelsHandler : MonoBehaviour
 {
-    [SerializeField] GameObject mainMenuPanel;
-    [SerializeField] GameObject[] panels;
+    [SerializeField] GameObject mainMenuPanel = default;
+    [SerializeField] GameObject[] panels = default;
 
     void Start() {}
 

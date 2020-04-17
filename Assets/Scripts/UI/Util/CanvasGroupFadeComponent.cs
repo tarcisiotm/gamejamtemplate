@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// A handler for fading a Canvas Group
+/// </summary>
 [RequireComponent(typeof(CanvasGroup))]
 public class CanvasGroupFadeComponent : MonoBehaviour
 {

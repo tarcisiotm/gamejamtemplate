@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 using TG.Core;
-using System;
 
+/// <summary>
+/// Slide from the side scene transition
+/// </summary>
 [RequireComponent(typeof(RectTransform))]
-public class PanelFade : SceneTransition {
+public class SlidePanelSceneTransition : SceneTransition {
     [SerializeField] float fadeDuration = .3f;
 
     [Header("Optional")]
     [Tooltip("Cosmetic object to activate after fade in completes.")]
-    [SerializeField] CanvasGroupFadeComponent activateAfterFadeIn;
+    [SerializeField] CanvasGroupFadeComponent activateAfterFadeIn = default;
 
     [SerializeField] float size = 0;
     int multiplier = -1;
@@ -31,7 +33,6 @@ public class PanelFade : SceneTransition {
     }
 
     void Start(){
-        //DontDestroyOnLoad(GetComponentInParent<Canvas>().gameObject);
         //FadeIn(2f);
     }
 
@@ -47,30 +48,28 @@ public class PanelFade : SceneTransition {
     void OnFadedIn() {
         if(activateAfterFadeIn != null) {
             activateAfterFadeIn.gameObject.SetActive(true);
-            activateAfterFadeIn.FadeIn(BeforeFadeStallDuration);
+            activateAfterFadeIn.FadeIn(BeforeFadeStallDuration/2f);
         }
     }
 
     void BeforeFadeOut() {
-        activateAfterFadeIn.FadeOut(BeforeFadeStallDuration);
+        if (activateAfterFadeIn != null) {
+            activateAfterFadeIn.FadeOut(BeforeFadeStallDuration);
+        }
     }
 
-    public void FadeIn(float duration) {
-        //Debug.Log("Fade in");
-        Fade(Vector2.zero, duration);
-    }
+    //public void FadeIn(float duration) {
+    //    Fade(Vector2.zero, duration);
+    //}
     
-    public void FadeOut(float duration) {
-        //var vect2 = Screen.width;
-        //Debug.Log("Fade out");
-        Fade(new Vector2(multiplier * size * transform.localScale.x, 0), duration);
-        multiplier *= -1;
-    }
+    //public void FadeOut(float duration) {
+    //    Fade(new Vector2(multiplier * size * transform.localScale.x, 0), duration);
+    //    multiplier *= -1;
+    //}
 
     public void Fade(Vector2 targetPos, float duration){
         RectTransform rt = GetComponent<RectTransform>();
-        rt.DOAnchorPos(targetPos, duration).SetEase(Ease.Linear);
+        rt.DOAnchorPos(targetPos, duration).SetEase(Ease.Linear).SetUpdate(true);
     }
-
 
 }
