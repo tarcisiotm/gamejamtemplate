@@ -11,4 +11,4 @@ The first pass will make this stable and usable, but not optimized yet. After Lu
 
 ## Dependencies
 
-Fill this out with any paid assets used and their version number (anything under 3rdPartyPaid will not be pushed).
+Fill this out with any paid assets used and their version number (anything under 3rdPartyPaid/ will not be pushed).
