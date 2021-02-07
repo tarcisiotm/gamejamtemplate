@@ -2167,6 +2167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 23656727}
     m_Modifications:
+    - target: {fileID: 1545824072, guid: f15921570d5ac4f699a51929d9df0166, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56.299805
+      objectReference: {fileID: 0}
     - target: {fileID: 2162427778538522898, guid: f15921570d5ac4f699a51929d9df0166,
         type: 3}
       propertyPath: m_Name
@@ -2277,5 +2281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2162427778538522902, guid: f15921570d5ac4f699a51929d9df0166,
+        type: 3}
+      propertyPath: _gameTitle
+      value: 
+      objectReference: {fileID: 2024175737}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15921570d5ac4f699a51929d9df0166, type: 3}

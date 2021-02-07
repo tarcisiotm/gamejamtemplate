@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Credits", menuName = "Data/Create Credits Asset")]
 public class CreditsData : ScriptableObject
@@ -10,7 +8,6 @@ public class CreditsData : ScriptableObject
 
     public string Title => _title;
     public CreditsEntryData[] CreditsEntries => _creditsEntries;
-
 }
 
 [System.Serializable]

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CreditsController : MonoBehaviour
 {
@@ -16,6 +16,8 @@ public class CreditsController : MonoBehaviour
     [Header("References")]
     [SerializeField] private CreditsData[] _creditsData;
     [SerializeField] private GameObject _pressAgainToQuitText;
+
+    private TextMeshProUGUI _gameTitle;
 
     [Header("Debug")]
     [SerializeField] private float _currentTime = 0;
@@ -74,6 +76,8 @@ public class CreditsController : MonoBehaviour
             if (_fadeInTime > 0) _canvasGroup.alpha = 0;
 
             _creditsPanelTransform = transform.Find("Credits Panel").GetComponent<RectTransform>();
+            _gameTitle = _creditsPanelTransform.Find("Game Title/Game Title Text").GetComponent<TextMeshProUGUI>();
+
             _titleTemplate = _creditsPanelTransform.Find("Templates/Title Template").gameObject;
             _nameTemplate = _creditsPanelTransform.Find("Templates/Name Template").gameObject;
             _linkTemplate = _creditsPanelTransform.Find("Templates/Link Template").gameObject;
@@ -120,6 +124,8 @@ public class CreditsController : MonoBehaviour
     #region Creation
     private void BuildCredits()
     {
+        if (_gameTitle != null) _gameTitle.text = Application.productName;
+
         foreach (var creditData in _creditsData) BuildCredit(creditData);
     }
 
@@ -148,7 +154,7 @@ public class CreditsController : MonoBehaviour
     {
         if (template == null || string.IsNullOrEmpty(text)) return;
 
-        var element = Instantiate(template).GetComponent<TMPro.TextMeshProUGUI>();
+        var element = Instantiate(template).GetComponent<TextMeshProUGUI>();
         element.text = text;
 
         parent = parent == null ? _creditsPanelTransform : parent;

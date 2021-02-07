@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void LoadMainMenu() {
         canUpdate = false;
+        Time.timeScale = 1;
         ScenesManager.I.LoadMainMenu();
     }
 
