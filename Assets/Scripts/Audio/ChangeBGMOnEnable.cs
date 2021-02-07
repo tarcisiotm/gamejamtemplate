@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /// <summary>
 /// A simple BGM handler script to change the music
@@ -9,19 +10,26 @@ public class ChangeBGMOnEnable : MonoBehaviour
     [SerializeField] float volume = 1;
     [SerializeField] bool autoDestroy = true;
 
-    public void PlayBGM() {
-        AudioManager.I.PlayBGM(bgmClip, volume);
-    }
-
-    void Awake()
+    private void OnEnable()
     {
-        PlayBGM();
+        if (AudioManager.I != null) PlayBGM();
+        else StartCoroutine(WaitForAudioManager());
     }
 
-    private void Start() {
-        if (autoDestroy) {
+    private IEnumerator WaitForAudioManager()
+    {
+        while (AudioManager.I == null) yield return null;
+
+        PlayBGM();
+
+        if (autoDestroy)
+        {
             Destroy(gameObject);
         }
     }
 
+    public void PlayBGM()
+    {
+        AudioManager.I.PlayBGM(bgmClip, volume);
+    }
 }

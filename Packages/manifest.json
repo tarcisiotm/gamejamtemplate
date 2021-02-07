@@ -39,11 +39,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.tarcisiogames.core": {
-      "revision": "HEAD",
-      "hash": "ba95075dbea094a11821861f2c6be71726d991a6"
-    }
   }
 }
