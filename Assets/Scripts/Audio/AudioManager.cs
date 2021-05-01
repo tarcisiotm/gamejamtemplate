@@ -7,13 +7,15 @@ using DG.Tweening;
 public class AudioManager : TG.Core.Audio.AudioManagerBase
 {
     [Header("Settings")]
-    [SerializeField] float fadeOutTime = 1f;
+    [SerializeField] float _fadeOutTime = 1f;
 
-    protected override void OnSceneIsGoingToLoad(int activeSceneBuildIndex, int newSceneBuildIndex) {
+    protected override void OnSceneIsGoingToLoad(int activeSceneBuildIndex, int newSceneBuildIndex)
+    {
         base.OnSceneIsGoingToLoad(activeSceneBuildIndex, newSceneBuildIndex);
 
-        if(bgmAudioSource != null) {
-            bgmAudioSource.DOFade(0, fadeOutTime).SetUpdate(true);
+        if (_bgmAudioSource != null)
+        {
+            _bgmAudioSource.DOFade(0, _fadeOutTime).SetUpdate(true);
         }
     }
 }
