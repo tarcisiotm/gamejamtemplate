@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.32156864, g: 0.33333334, b: 0.63529414, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -116,6 +117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2009ece6c791c524c98d04a0fc99cdda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionDuration: 0.5
+  beforeFadeOutStallDuration: 0
+  fadeDuration: 0.3
+  activateAfterFadeIn: {fileID: 0}
+  size: 0
 --- !u!1 &7022654171304383489
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9709bd6646cbed34f97d7a628eccd324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usesFade: 1
-  fadeDuration: 1
+  _minLoadTime: 0
+  _mainMenuSceneBuildIndex: 0
 --- !u!1 &7022654171421107904
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7022654171421107910}
-  - component: {fileID: 7022654171421107911}
+  - component: {fileID: -3231539634494417184}
   m_Layer: 0
   m_Name: DontDestroyOnLoad
   m_TagString: Untagged
@@ -263,7 +269,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7022654171421107911
+--- !u!114 &-3231539634494417184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,7 +278,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7022654171421107904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41eddf1c27f5e8d4182fa8ca2fab8071, type: 3}
+  m_Script: {fileID: 11500000, guid: ba1fab71e72334071b1fa1881fbf7c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oneInstanceOnly: 1

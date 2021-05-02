@@ -6,8 +6,9 @@ using UnityEngine;
 /// </summary>
 public class ChangeBGMOnEnable : MonoBehaviour
 {
-    [SerializeField] AudioClip bgmClip = default;
-    [SerializeField] float volume = 1;
+    [SerializeField] AudioClip _bgmClip = default;
+    [SerializeField] float _volume = 1;
+    [SerializeField] float _delay = 0f;
     [SerializeField] bool autoDestroy = true;
 
     private void OnEnable()
@@ -18,6 +19,14 @@ public class ChangeBGMOnEnable : MonoBehaviour
 
     private IEnumerator WaitForAudioManager()
     {
+        if (_bgmClip == null)
+        {
+            Debug.LogError($"BGM is null on {name}. This is probably unintended.");
+            yield break;
+        }
+
+        yield return new WaitForSeconds(_delay);
+
         while (AudioManager.I == null) yield return null;
 
         PlayBGM();
@@ -30,6 +39,6 @@ public class ChangeBGMOnEnable : MonoBehaviour
 
     public void PlayBGM()
     {
-        AudioManager.I.PlayBGM(bgmClip, volume);
+        AudioManager.I.PlayBGM(_bgmClip, _volume);
     }
 }
