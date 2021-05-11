@@ -23,10 +23,12 @@ namespace TG.GameJamTemplate
         {
             if (!_canUpdate) { return; }
 
+#if INPUT_LEGACY
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (_isPaused) { UnpauseGame(); } else { PauseGame(); }
             }
+#endif
         }
 
         public void PauseGame()

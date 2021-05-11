@@ -106,6 +106,7 @@ namespace TG.GameJamTemplate
         {
             if (!_hasInit) return;
 
+#if INPUT_LEGACY
             if (Input.anyKeyDown && _creditsState != CreditsState.FadingOut)
             {
                 if (_keysPressed < 1)
@@ -115,6 +116,7 @@ namespace TG.GameJamTemplate
                 }
                 else SetupFadeOut();
             }
+#endif
 
             FadeIn();
             Delay(CreditsState.PostFadeIn, SetupScrolling);
