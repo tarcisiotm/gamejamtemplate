@@ -1,42 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderController : MonoBehaviour
+namespace TG.GameJamTemplate
 {
-    [SerializeField] private Slider _slider = default;
-    [Header("Optional")]
-    [SerializeField] TMPro.TextMeshProUGUI _valueText = default;
-
-    public Slider Slider => _slider;
-
-    public float Value
+    public class SliderController : MonoBehaviour
     {
-        get
+        [SerializeField] private Slider _slider = default;
+        [Header("Optional")]
+        [SerializeField] TMPro.TextMeshProUGUI _valueText = default;
+
+        public Slider Slider => _slider;
+
+        public float Value
         {
-            float value;
-            float.TryParse(_valueText.text, out value);
+            get
+            {
+                float value;
+                float.TryParse(_valueText.text, out value);
 
-            return value / 100f;
+                return value / 100f;
+            }
         }
-    }
 
-    private void Start()
-    {
-        
-    }
+        private void Start()
+        {
+        }
 
-    public void Init(float value)
-    {
-        SetValue(value);
-        _slider.value = value;
-    }
+        public void Init(float value)
+        {
+            SetValue(value);
+            _slider.value = value;
+        }
 
-    public void SetValue(float value)
-    {
-        var valueInt = Mathf.RoundToInt(value * 100);
-        _valueText.text = valueInt.ToString();
+        public void SetValue(float value)
+        {
+            var valueInt = Mathf.RoundToInt(value * 100);
+            _valueText.text = valueInt.ToString();
+        }
     }
 }

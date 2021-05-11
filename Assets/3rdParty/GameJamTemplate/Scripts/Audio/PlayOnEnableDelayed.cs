@@ -1,28 +1,35 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// A simmple component to delay playing an audio on enable
-/// </summary>
-public class PlayOnEnableDelayed : MonoBehaviour
+namespace TG.GameJamTemplate
 {
-    [SerializeField] float delay = 0;
+    /// <summary>
+    /// A simmple component to delay playing an audio on enable
+    /// </summary>
+    public class PlayOnEnableDelayed : MonoBehaviour
+    {
+        [SerializeField] float _delay = 0;
 
-    Coroutine WaitRoutine;
-    private void OnEnable() {
-        WaitRoutine = StartCoroutine(DelayToPlay());
-    }
+        private Coroutine _waitRoutine;
 
-    IEnumerator DelayToPlay() {
-        yield return new WaitForSeconds(delay);
-        GetComponent<AudioSource>().Play();
-        WaitRoutine = null;
-    }
+        private void OnEnable()
+        {
+            _waitRoutine = StartCoroutine(DelayToPlay());
+        }
 
-    private void OnDisable() {
-        if(WaitRoutine != null) {
-            StopCoroutine(WaitRoutine);
+        private IEnumerator DelayToPlay()
+        {
+            yield return new WaitForSeconds(_delay);
+            GetComponent<AudioSource>().Play();
+            _waitRoutine = null;
+        }
+
+        private void OnDisable()
+        {
+            if (_waitRoutine != null)
+            {
+                StopCoroutine(_waitRoutine);
+            }
         }
     }
 }

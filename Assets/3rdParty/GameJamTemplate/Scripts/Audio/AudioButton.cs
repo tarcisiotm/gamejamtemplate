@@ -1,35 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-/// <summary>
-/// Provides functionality for audio playback on UI buttons
-/// </summary>
-public class AudioButton : MonoBehaviour, IPointerEnterHandler
+namespace TG.GameJamTemplate
 {
-    [SerializeField] AudioSource audioSource = default;
-    [SerializeField] AudioClip onHover = default;
-    [SerializeField] float onHoverVolume = .6f;
-    [SerializeField] AudioClip clickClip = default;
-
-    private void Awake()
+    /// <summary>
+    /// Provides functionality for audio playback on UI buttons
+    /// </summary>
+    public class AudioButton : MonoBehaviour, IPointerEnterHandler
     {
+        [SerializeField] private AudioSource _audioSource = default;
+        [SerializeField] private AudioClip _onHover = default;
+        [SerializeField] private AudioClip _clickClip = default;
+        [SerializeField] private float _onHoverVolume = .6f;
 
-        Button btn = GetComponent<Button>();
-        btn.onClick.AddListener(OnClick);
-    }
+        private void Awake()
+        {
+            GetComponent<Button>().onClick.AddListener(OnClick);
+        }
 
-    public void OnClick()
-    {
-        audioSource.volume = 1f;
-        audioSource.PlayOneShot(clickClip);
-    }
+        public void OnClick()
+        {
+            _audioSource.volume = 1f;
+            _audioSource.PlayOneShot(_clickClip);
+        }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        audioSource.volume = onHoverVolume;
-        audioSource.PlayOneShot(onHover);
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            _audioSource.volume = _onHoverVolume;
+            _audioSource.PlayOneShot(_onHover);
+        }
     }
 }

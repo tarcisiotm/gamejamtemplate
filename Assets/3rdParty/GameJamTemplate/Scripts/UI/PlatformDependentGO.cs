@@ -6,7 +6,8 @@
 public class PlatformDependentGO : MonoBehaviour
 {
     [System.Flags]
-    enum Platform {
+    private enum Platform
+    {
         None,
         WebGL,
         MacOS,
@@ -16,9 +17,10 @@ public class PlatformDependentGO : MonoBehaviour
         Android
     }
 
-    [SerializeField] Platform platformsToDisable = Platform.None;
+    [SerializeField] private Platform _platformsToDisable = Platform.None;
 
-    private void Awake() {
+    private void Awake()
+    {
 #if UNITY_WEBGL
         DisableGO(Platform.WebGL);
 #elif UNITY_STANDALONE_OSX
@@ -34,8 +36,10 @@ public class PlatformDependentGO : MonoBehaviour
 #endif
     }
 
-    void DisableGO(Platform platform) {
-        if (platformsToDisable.HasFlag(platform)) {
+    private void DisableGO(Platform platform)
+    {
+        if (_platformsToDisable.HasFlag(platform))
+        {
             gameObject.SetActive(false);
         }
     }

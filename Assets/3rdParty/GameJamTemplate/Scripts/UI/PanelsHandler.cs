@@ -1,37 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-/// <summary>
-/// Handles the activation of panels in a UI
-/// </summary>
-public class PanelsHandler : MonoBehaviour
+namespace TG.GameJamTemplate
 {
-    [SerializeField] GameObject mainMenuPanel = default;
-    [SerializeField] GameObject[] panels = default;
-
-    void Start() {}
-
-    public void Activate(GameObject panel)
+    /// <summary>
+    /// Handles the activation of panels in a UI
+    /// </summary>
+    public class PanelsHandler : MonoBehaviour
     {
-        SetPanel(panel);
-    }
+        [SerializeField] private GameObject _mainMenuPanel = default;
+        [SerializeField] private GameObject[] _panels = default;
 
-    public void ActivateMainMenu()
-    {
-        Activate(mainMenuPanel);
-    }
+        private void Start() { }
 
-    void SetPanel(GameObject panel) {
-        foreach(var go in panels)
+        public void Activate(GameObject panel)
         {
-            go.SetActive(go == panel);
+            SetPanel(panel);
+        }
+
+        public void ActivateMainMenu()
+        {
+            Activate(_mainMenuPanel);
+        }
+
+        private void SetPanel(GameObject panel)
+        {
+            foreach (var go in _panels)
+            {
+                go.SetActive(go == panel);
+            }
+        }
+
+        public void Quit()
+        {
+            Application.Quit();
         }
     }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
 }

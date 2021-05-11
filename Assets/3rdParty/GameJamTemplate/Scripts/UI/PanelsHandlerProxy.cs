@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Proxy for the Panels Handler
-/// </summary>
-public class PanelsHandlerProxy : MonoBehaviour
+namespace TG.GameJamTemplate
 {
-    void Start(){ }
-
-    public void ActivateMainMenu()
+    /// <summary>
+    /// Proxy for the Panels Handler
+    /// </summary>
+    public class PanelsHandlerProxy : MonoBehaviour
     {
-        FindObjectOfType<PanelsHandler>().ActivateMainMenu();
+        private void Start() { }
+
+        public void ActivateMainMenu()
+        {
+            FindObjectOfType<PanelsHandler>().ActivateMainMenu();
+        }
     }
 }

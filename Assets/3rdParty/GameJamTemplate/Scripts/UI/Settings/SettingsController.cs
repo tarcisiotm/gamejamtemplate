@@ -1,75 +1,76 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 
-public class SettingsController : MonoBehaviour
+namespace TG.GameJamTemplate
 {
-    [SerializeField] private bool _updateAudioInRealTime = true;
-
-    [SerializeField] private SliderController _bgmSlider = default;
-    [SerializeField] private SliderController _sfxSlider = default;
-
-    [Header("References")]
-    [SerializeField] private AudioMixer _mainAudioMixer = default;
-
-    private Settings _settings;
-
-    protected virtual void OnEnable()
+    public class SettingsController : MonoBehaviour
     {
-        _settings = new Settings();
-        _settings.Load();
+        [SerializeField] private bool _updateAudioInRealTime = true;
 
-        Init();
+        [SerializeField] private SliderController _bgmSlider = default;
+        [SerializeField] private SliderController _sfxSlider = default;
 
-        if (_updateAudioInRealTime)
+        [Header("References")]
+        [SerializeField] private AudioMixer _mainAudioMixer = default;
+
+        private Settings _settings;
+
+        protected virtual void OnEnable()
         {
-            _bgmSlider.Slider.onValueChanged.AddListener(SetVolume);
-            _sfxSlider.Slider.onValueChanged.AddListener(SetVolume);
-        }
-    }
+            _settings = new Settings();
+            _settings.Load();
 
-    protected virtual void Init()
-    {
-        _bgmSlider.Init(_settings.MusicVolume);
-        _sfxSlider.Init(_settings.SFXVolume);
-    }
+            Init();
 
-    private void OnDisable()
-    {
-        if (_updateAudioInRealTime)
-        {
-            _bgmSlider.Slider.onValueChanged.RemoveListener(SetVolume);
-            _sfxSlider.Slider.onValueChanged.RemoveListener(SetVolume);
+            if (_updateAudioInRealTime)
+            {
+                _bgmSlider.Slider.onValueChanged.AddListener(SetVolume);
+                _sfxSlider.Slider.onValueChanged.AddListener(SetVolume);
+            }
         }
 
-        _settings.SetAudio(_bgmSlider.Value, _bgmSlider.Value);
-        _settings.Save();
+        protected virtual void Init()
+        {
+            _bgmSlider.Init(_settings.MusicVolume);
+            _sfxSlider.Init(_settings.SFXVolume);
+        }
 
-        _settings = null;
-    }
+        private void OnDisable()
+        {
+            if (_updateAudioInRealTime)
+            {
+                _bgmSlider.Slider.onValueChanged.RemoveListener(SetVolume);
+                _sfxSlider.Slider.onValueChanged.RemoveListener(SetVolume);
+            }
 
-    public void SetVolume(float value)
-    {
-        var musicVal = Mathf.Clamp(_bgmSlider.Value, 0.0001f, 80);
-        var sfxVal = Mathf.Clamp(_sfxSlider.Value, 0.0001f, 80);
+            _settings.SetAudio(_bgmSlider.Value, _bgmSlider.Value);
+            _settings.Save();
 
-        _mainAudioMixer.SetFloat("BGMVolume", Mathf.Log10(musicVal) * 20);
-        _mainAudioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVal) * 20);
-    }
+            _settings = null;
+        }
 
-    public void Reset()
-    {
-        _settings = new Settings();
+        public void SetVolume(float value)
+        {
+            var musicVal = Mathf.Clamp(_bgmSlider.Value, 0.0001f, 80);
+            var sfxVal = Mathf.Clamp(_sfxSlider.Value, 0.0001f, 80);
 
-        Init();
+            _mainAudioMixer.SetFloat("BGMVolume", Mathf.Log10(musicVal) * 20);
+            _mainAudioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVal) * 20);
+        }
 
-        _settings.Save();
-    }
+        public void Reset()
+        {
+            _settings = new Settings();
 
-    public void Close()
-    {
-        // show confirm popup?
-        gameObject.SetActive(false);
+            Init();
+
+            _settings.Save();
+        }
+
+        public void Close()
+        {
+            // show confirm popup?
+            gameObject.SetActive(false);
+        }
     }
 }

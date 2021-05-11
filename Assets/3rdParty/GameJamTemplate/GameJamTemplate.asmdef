@@ -1,0 +1,18 @@
+{
+    "name": "GameJamTemplate",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:5a34abb51a0d94d95b6eef9916593cfa",
+        "GUID:d556f268dd34b4cd68352c690dc3e868",
+        "GUID:b7d2d6b79091b4d4eae9941405a2ccc3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

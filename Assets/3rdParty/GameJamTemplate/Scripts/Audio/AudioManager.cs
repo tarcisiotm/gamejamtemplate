@@ -1,21 +1,24 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
-/// <summary>
-/// A manager for fading audio, creating new instances, etc
-/// </summary>
-public class AudioManager : TG.Core.Audio.AudioManagerBase
+namespace TG.GameJamTemplate
 {
-    [Header("Settings")]
-    [SerializeField] float _fadeOutTime = 1f;
-
-    protected override void OnSceneIsGoingToLoad(int activeSceneBuildIndex, int newSceneBuildIndex)
+    /// <summary>
+    /// A manager for fading audio, creating new instances, etc
+    /// </summary>
+    public class AudioManager : TG.Core.Audio.AudioManagerBase
     {
-        base.OnSceneIsGoingToLoad(activeSceneBuildIndex, newSceneBuildIndex);
+        [Header("Settings")]
+        [SerializeField] float _fadeOutTime = 1f;
 
-        if (_bgmAudioSource != null)
+        protected override void OnSceneIsGoingToLoad(int activeSceneBuildIndex, int newSceneBuildIndex)
         {
-            _bgmAudioSource.DOFade(0, _fadeOutTime).SetUpdate(true);
+            base.OnSceneIsGoingToLoad(activeSceneBuildIndex, newSceneBuildIndex);
+
+            if (_bgmAudioSource != null)
+            {
+                _bgmAudioSource.DOFade(0, _fadeOutTime).SetUpdate(true);
+            }
         }
     }
 }

@@ -1,44 +1,47 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// A simple BGM handler script to change the music
-/// </summary>
-public class ChangeBGMOnEnable : MonoBehaviour
+namespace TG.GameJamTemplate
 {
-    [SerializeField] AudioClip _bgmClip = default;
-    [SerializeField] float _volume = 1;
-    [SerializeField] float _delay = 0f;
-    [SerializeField] bool autoDestroy = true;
-
-    private void OnEnable()
+    /// <summary>
+    /// A simple BGM handler script to change the music
+    /// </summary>
+    public class ChangeBGMOnEnable : MonoBehaviour
     {
-        if (AudioManager.I != null) PlayBGM();
-        else StartCoroutine(WaitForAudioManager());
-    }
+        [SerializeField] AudioClip _bgmClip = default;
+        [SerializeField] float _volume = 1;
+        [SerializeField] float _delay = 0f;
+        [SerializeField] bool _autoDestroy = true;
 
-    private IEnumerator WaitForAudioManager()
-    {
-        if (_bgmClip == null)
+        private void OnEnable()
         {
-            Debug.LogError($"BGM is null on {name}. This is probably unintended.");
-            yield break;
+            if (AudioManager.I != null) PlayBGM();
+            else StartCoroutine(WaitForAudioManager());
         }
 
-        yield return new WaitForSeconds(_delay);
-
-        while (AudioManager.I == null) yield return null;
-
-        PlayBGM();
-
-        if (autoDestroy)
+        private IEnumerator WaitForAudioManager()
         {
-            Destroy(gameObject);
-        }
-    }
+            if (_bgmClip == null)
+            {
+                Debug.LogError($"BGM is null on {name}. This is probably unintended.");
+                yield break;
+            }
 
-    public void PlayBGM()
-    {
-        AudioManager.I.PlayBGM(_bgmClip, _volume);
+            yield return new WaitForSeconds(_delay);
+
+            while (AudioManager.I == null) yield return null;
+
+            PlayBGM();
+
+            if (_autoDestroy)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void PlayBGM()
+        {
+            AudioManager.I.PlayBGM(_bgmClip, _volume);
+        }
     }
 }

@@ -526,6 +526,21 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
@@ -538,6 +553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
@@ -1061,7 +1081,7 @@ PrefabInstance:
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
@@ -1969,6 +1989,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 57.699707
       objectReference: {fileID: 0}
+    - target: {fileID: 701976241075916828, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+        type: 3}
+      propertyPath: size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 701976241075916828, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+        type: 3}
+      propertyPath: _activateAfterFadeIn
+      value: 
+      objectReference: {fileID: 736106619}
     - target: {fileID: 701976242650725897, guid: 84b6229af678c4c13aa2a99ef46ef28b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2047,6 +2077,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84b6229af678c4c13aa2a99ef46ef28b, type: 3}
+--- !u!114 &736106619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7135555560309023491, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+    type: 3}
+  m_PrefabInstance: {fileID: 736106618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434b6e0e0e81f4b0796fcd0fb9adc8cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783222171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +2313,21 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
@@ -2283,6 +2340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
@@ -2964,6 +3026,21 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
       propertyPath: m_textInfo.lineCount
       value: 0
       objectReference: {fileID: 0}
@@ -2976,6 +3053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9117857266561305686, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
@@ -3384,7 +3466,7 @@ MonoBehaviour:
   _bgmClip: {fileID: 0}
   _volume: 1
   _delay: 0
-  autoDestroy: 1
+  _autoDestroy: 1
 --- !u!4 &1310658086
 Transform:
   m_ObjectHideFlags: 0
@@ -3753,8 +3835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87c3afb1ff8d47e3bd3b15c06a7ada9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onStart: 1
-  gameObjectToSelect: {fileID: 667343070}
+  _onStart: 1
+  _gameObjectToSelect: {fileID: 667343070}
 --- !u!1 &1633734771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,7 +3933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e7baad5c95c48feaa0a98ab44ee98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformsToDisable: 1
+  _platformsToDisable: 1
 --- !u!1 &1755431901
 GameObject:
   m_ObjectHideFlags: 0
