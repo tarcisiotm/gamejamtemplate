@@ -55,7 +55,7 @@ MonoBehaviour:
   transitionDuration: 0.5
   beforeFadeOutStallDuration: 0
   _fadeDuration: 0.3
-  activateAfterFadeIn: {fileID: 0}
+  _activateAfterFadeIn: {fileID: 0}
 --- !u!222 &791263237
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -304,6 +304,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &597626870378846863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7965515322608244436}
+  m_Layer: 0
+  m_Name: Audio Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7965515322608244436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597626870378846863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3291276477554105485}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701976241075916816
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,8 +395,8 @@ MonoBehaviour:
   transitionDuration: 1
   beforeFadeOutStallDuration: 1
   _fadeDuration: 0.3
-  activateAfterFadeIn: {fileID: 7135555560309023491}
-  size: 0
+  _activateAfterFadeIn: {fileID: 0}
+  _size: 0
 --- !u!114 &701976241075916830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3291276477554105485}
   - component: {fileID: 8200600332461295159}
+  - component: {fileID: 5114939857435641536}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -525,6 +556,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6924273590139059183}
+  - {fileID: 7965515322608244436}
   m_Father: {fileID: 7135555559467506898}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -541,9 +573,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeBGMOnSceneLoad: 1
-  _bgmAudioSource: {fileID: 0}
-  _audioPrefab: {fileID: 0}
+  _bgmAudioSource: {fileID: 2255408232725365436}
+  _audioPrefab: {fileID: 6882589028417307377, guid: 2eaeecf9e46d04492915584104b1e7eb,
+    type: 3}
+  _audioPlayAndDestroyPrefab: {fileID: 0}
   _fadeOutTime: 1
+--- !u!114 &5114939857435641536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211931356591986559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a94e40da64243038f30e483b6dc20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onStart: 1
+  _incrementalInitialization: 1
+  _canIncreaseInSize: 1
+  _poolingSets:
+  - Name: Audio One Shot
+    Prefab: {fileID: 6882589028417307377, guid: 2eaeecf9e46d04492915584104b1e7eb,
+      type: 3}
+    AmountToPool: 5
+    ParentTransform: {fileID: 7965515322608244436}
+    Objects: []
 --- !u!1 &2423201407417864403
 GameObject:
   m_ObjectHideFlags: 0
