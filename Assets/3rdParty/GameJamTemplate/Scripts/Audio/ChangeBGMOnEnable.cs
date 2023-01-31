@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TG.Core;
 using UnityEngine;
 
 namespace TG.GameJamTemplate
@@ -9,13 +10,13 @@ namespace TG.GameJamTemplate
     public class ChangeBGMOnEnable : MonoBehaviour
     {
         [SerializeField] AudioClip _bgmClip = default;
-        [SerializeField] float _volume = 1;
+        [SerializeField] [Range(0,1f)] float _volume = 1;
         [SerializeField] float _delay = 0f;
         [SerializeField] bool _autoDestroy = true;
 
         private void OnEnable()
         {
-            if (AudioManager.I != null) PlayBGM();
+            if (GameManager.I != null && GameManager.I.HasFullyInitialized) PlayBGM();
             else StartCoroutine(WaitForAudioManager());
         }
 
@@ -27,9 +28,7 @@ namespace TG.GameJamTemplate
                 yield break;
             }
 
-            yield return new WaitForSeconds(_delay);
-
-            while (AudioManager.I == null) yield return null;
+            while (GameManager.I == null || !GameManager.I.HasFullyInitialized) yield return null;
 
             PlayBGM();
 
@@ -41,7 +40,8 @@ namespace TG.GameJamTemplate
 
         public void PlayBGM()
         {
-            AudioManager.I.PlayBGM(_bgmClip, _volume);
+            var audioManager = GameManager.I.GetModule<AudioManager>();
+            audioManager.PlayBGM(_bgmClip, _volume);
         }
     }
 }

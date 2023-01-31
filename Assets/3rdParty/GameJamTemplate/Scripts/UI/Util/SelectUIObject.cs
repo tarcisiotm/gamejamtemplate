@@ -24,7 +24,7 @@ namespace TG.GameJamTemplate
         {
             if (_gameObjectToSelect == null)
             {
-                Debug.LogWarning("Null GameObject Selected");
+                Debug.LogError("No GameObject Selected as default!");
                 return;
             }
 

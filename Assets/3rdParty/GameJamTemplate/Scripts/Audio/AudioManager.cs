@@ -11,14 +11,10 @@ namespace TG.GameJamTemplate
         [Header("Settings")]
         [SerializeField] float _fadeOutTime = 1f;
 
-        protected override void OnSceneIsGoingToLoad(int activeSceneBuildIndex, int newSceneBuildIndex)
+        public void FadeOutBGM()
         {
-            base.OnSceneIsGoingToLoad(activeSceneBuildIndex, newSceneBuildIndex);
-
-            if (_bgmAudioSource != null)
-            {
-                _bgmAudioSource.DOFade(0, _fadeOutTime).SetUpdate(true);
-            }
+            if (_bgmAudioSource == null || _bgmAudioSource.clip == null || !_bgmAudioSource.isPlaying) return;
+            _bgmAudioSource.DOFade(0, _fadeOutTime).SetUpdate(true);
         }
     }
 }

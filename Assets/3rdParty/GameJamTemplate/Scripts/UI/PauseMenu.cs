@@ -56,13 +56,13 @@ namespace TG.GameJamTemplate
         {
             _canUpdate = false;
             Time.timeScale = 1;
-            ScenesManager.I.LoadMainMenu();
+            GameManager.I.GetModule<ScenesManager>().LoadMainMenu();
         }
 
         public void ReloadScene()
         {
             if (_isLocked) { return; }
-            ScenesManager.I.ReloadScene();
+            GameManager.I.GetModule<ScenesManager>().ReloadScene();
             _isLocked = true;
         }
 
