@@ -2,7 +2,9 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Aa]ssets\3rdParty\GameJamTemplate\DoNotPush
+
+# Will let the folder be created
+/[Aa]ssets/3rdParty/GameJamTemplate/DoNotPush/
 
 .utmp/
 /[Ll]ibrary/
