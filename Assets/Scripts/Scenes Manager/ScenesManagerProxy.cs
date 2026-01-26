@@ -6,14 +6,13 @@ namespace TG.Core {
     /// Scenes Manager Proxy for operations that require a reference
     /// </summary>
     public class ScenesManagerProxy : MonoBehaviour {
-
         public virtual void LoadMainMenu() {
             GameManager.I.GetModule<AudioManager>().FadeOutBGM();
             GameManager.I.GetModule<ScenesManager>().LoadMainMenu();
         }
 
         public virtual void LoadNextLevel() {
-            //GameManager.I.GetModule<AudioManager>().FadeOutBGM();
+            //GameManager.I.GetModule<AudioManager>().FadeOutBGM(); // why?
             GameManager.I.GetModule<ScenesManager>().LoadNextSceneWithFade();
         }
 

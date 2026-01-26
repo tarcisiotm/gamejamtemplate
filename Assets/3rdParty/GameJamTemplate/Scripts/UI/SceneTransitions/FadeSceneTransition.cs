@@ -13,23 +13,11 @@ namespace TG.GameJamTemplate
         [SerializeField] float _fadeDuration = .3f;
 
         [Header("Optional")]
-        [Tooltip("Cosmetic object to activate after fade in completes.")]
+        [Tooltip("UI object to activate after fade in completes.")]
         [SerializeField] CanvasGroupFadeComponent _activateAfterFadeIn = default;
 
         private void Awake()
         {
-        }
-
-        private void OnEnable()
-        {
-            ScenesManager.OnTransitionFadedIn += OnFadedIn;
-            ScenesManager.OnTransitionIsGoingToFadeOut += BeforeFadeOut;
-        }
-
-        private void OnDisable()
-        {
-            ScenesManager.OnTransitionFadedIn -= OnFadedIn;
-            ScenesManager.OnTransitionIsGoingToFadeOut -= BeforeFadeOut;
         }
 
         private void Start()
@@ -47,7 +35,7 @@ namespace TG.GameJamTemplate
             Fade(0, _fadeDuration);
         }
 
-        private void OnFadedIn()
+        protected override void OnFadedIn()
         {
             if (_activateAfterFadeIn != null)
             {
@@ -56,7 +44,7 @@ namespace TG.GameJamTemplate
             }
         }
 
-        private void BeforeFadeOut()
+        protected override void BeforeFadeOut()
         {
             if (_activateAfterFadeIn != null)
             {
@@ -64,11 +52,20 @@ namespace TG.GameJamTemplate
             }
         }
 
-        public void Fade(float targetAlpha, float duration)
+        protected void Fade(float targetAlpha, float duration)
         {
             CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-            canvasGroup.DOFade(targetAlpha, duration).SetEase(Ease.Linear).SetUpdate(true).OnComplete(OnCompleteCallback);
+            fadeTween = canvasGroup.DOFade(targetAlpha, duration)
+                .SetEase(Ease.Linear)
+                .SetUpdate(true)
+                .OnComplete(OnCompleteCallback);
+                //.OnUpdate(OnFadeUpdate);
         }
+
+        //protected void OnFadeUpdate() 
+        //{
+            //Debug.LogError($"{fadeTween.ElapsedPercentage()}%");
+        //}
 
         private void OnCompleteCallback()
         {

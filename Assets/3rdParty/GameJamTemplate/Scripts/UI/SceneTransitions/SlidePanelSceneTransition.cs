@@ -25,18 +25,6 @@ namespace TG.GameJamTemplate
             _size = _size > 0 ? _size : Screen.width;
         }
 
-        private void OnEnable()
-        {
-            ScenesManager.OnTransitionFadedIn += OnFadedIn;
-            ScenesManager.OnTransitionIsGoingToFadeOut += BeforeFadeOut;
-        }
-
-        private void OnDisable()
-        {
-            ScenesManager.OnTransitionFadedIn -= OnFadedIn;
-            ScenesManager.OnTransitionIsGoingToFadeOut -= BeforeFadeOut;
-        }
-
         private void Start()
         {
             //FadeIn(2f);
@@ -53,7 +41,7 @@ namespace TG.GameJamTemplate
             _multiplier *= -1;
         }
 
-        private void OnFadedIn()
+        protected override void OnFadedIn()
         {
             if (_activateAfterFadeIn != null)
             {
@@ -62,7 +50,7 @@ namespace TG.GameJamTemplate
             }
         }
 
-        private void BeforeFadeOut()
+        protected override void BeforeFadeOut()
         {
             if (_activateAfterFadeIn != null)
             {
