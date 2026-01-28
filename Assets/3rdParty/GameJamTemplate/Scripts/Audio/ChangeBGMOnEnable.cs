@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using TG.Core;
 using UnityEngine;
 
 namespace TG.GameJamTemplate
@@ -31,17 +30,17 @@ namespace TG.GameJamTemplate
             while (GameManager.I == null || !GameManager.I.HasFullyInitialized) yield return null;
 
             PlayBGM();
-
-            if (_autoDestroy)
-            {
-                Destroy(gameObject);
-            }
         }
 
         public void PlayBGM()
         {
             var audioManager = GameManager.I.GetModule<AudioManager>();
-            audioManager.PlayBGM(_bgmClip, _volume);
+            audioManager.PlayBGM(_bgmClip, gameObject.scene.buildIndex, _volume, _delay);
+
+            if (_autoDestroy)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

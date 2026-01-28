@@ -15,6 +15,7 @@ namespace TG.GameJamTemplate
                 if (SceneManager.GetSceneAt(i).name == managersSceneName) return;
             }
 
+            // TODO: test this in a build
             SceneManager.LoadScene(managersSceneName, LoadSceneMode.Additive);
         }
     }

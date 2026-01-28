@@ -3435,7 +3435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376adcb384d7341efb3390f0bd0326a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgmClip: {fileID: 0}
+  _bgmClip: {fileID: 8300000, guid: db9692da2c3dfcb4d9044fb2b2263eb3, type: 3}
   _volume: 1
   _delay: 0
   _autoDestroy: 1

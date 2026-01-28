@@ -13,8 +13,12 @@ namespace TG.GameJamTemplate
 
         public void FadeOutBGM()
         {
-            if (_bgmAudioSource == null || _bgmAudioSource.clip == null || !_bgmAudioSource.isPlaying) return;
-            _bgmAudioSource.DOFade(0, _fadeOutTime).SetUpdate(true);
+            //if (bgmAudioSourceTemplate == null || bgmAudioSourceTemplate.clip == null || !bgmAudioSourceTemplate.isPlaying) return;
+            //bgmAudioSourceTemplate.DOFade(0, _fadeOutTime).SetUpdate(true).OnComplete(OnBGMFadedOut);
+        }
+
+        private void OnBGMFadedOut() 
+        {
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using TG.Core;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace TG.GameJamTemplate
 {
@@ -15,14 +17,7 @@ namespace TG.GameJamTemplate
         [Header("Optional")]
         [Tooltip("UI object to activate after fade in completes.")]
         [SerializeField] CanvasGroupFadeComponent _activateAfterFadeIn = default;
-
-        private void Awake()
-        {
-        }
-
-        private void Start()
-        {
-        }
+        [SerializeField] Image _progressIndicatorImage = default;
 
         public override void FadeIn()
         {
@@ -60,6 +55,13 @@ namespace TG.GameJamTemplate
                 .SetUpdate(true)
                 .OnComplete(OnCompleteCallback);
                 //.OnUpdate(OnFadeUpdate);
+        }
+
+        protected override void OnSceneProgressUpdated(float progress)
+        {
+            base.OnSceneProgressUpdated(progress);
+            _progressIndicatorImage.fillAmount = progress;
+
         }
 
         //protected void OnFadeUpdate() 
