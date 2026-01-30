@@ -5095,6 +5095,11 @@ PrefabInstance:
       propertyPath: _gameTitle
       value: 
       objectReference: {fileID: 2024175737}
+    - target: {fileID: 2162427778538522902, guid: f15921570d5ac4f699a51929d9df0166,
+        type: 3}
+      propertyPath: _fadeInTime
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

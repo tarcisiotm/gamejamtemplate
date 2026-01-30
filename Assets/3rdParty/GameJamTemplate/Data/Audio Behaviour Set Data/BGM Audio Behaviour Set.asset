@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5084d950dedfe40ba4d65f7f35b8ec, type: 3}
   m_Name: BGM Audio Behaviour Set
   m_EditorClassIdentifier: TG.Audio::TG.Core.Audio.AudioBehaviorSet
-  playbackBehaviour: {fileID: 0}
+  playbackBehaviour: {fileID: 11400000, guid: 381c294ca5f8ea945a5ade6533dc56af, type: 2}
+  onGamePausedBehaviour: {fileID: 11400000, guid: d927f944e6e450848826160f5d278200,
+    type: 2}
   playbackEndedBehaviour: {fileID: 0}
   sceneUnloadBehaviour: {fileID: 11400000, guid: 51e8bf0b77628a94b91fc200c6a9357b,
     type: 2}

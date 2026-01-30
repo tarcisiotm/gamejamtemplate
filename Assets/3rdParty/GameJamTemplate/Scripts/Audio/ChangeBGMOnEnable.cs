@@ -15,25 +15,23 @@ namespace TG.GameJamTemplate
 
         private void OnEnable()
         {
-            if (GameManager.I != null && GameManager.I.HasFullyInitialized) PlayBGM();
-            else StartCoroutine(WaitForAudioManager());
+            if (GameManager.I != null && GameManager.I.Initialized) PlayBGM();
+            else GameManager.OnInitialized += PlayBGM;
         }
 
-        private IEnumerator WaitForAudioManager()
+        private void OnDisable()
         {
-            if (_bgmClip == null)
-            {
-                Debug.LogError($"BGM is null on {name}. This is probably unintended.");
-                yield break;
-            }
-
-            while (GameManager.I == null || !GameManager.I.HasFullyInitialized) yield return null;
-
-            PlayBGM();
+            GameManager.OnInitialized -= PlayBGM;
         }
 
         public void PlayBGM()
         {
+            if (_bgmClip == null)
+            {
+                Debug.LogError($"BGM is null on {name}. This is probably unintended.");
+                return;
+            }
+
             var audioManager = GameManager.I.GetModule<AudioManager>();
             audioManager.PlayBGM(_bgmClip, gameObject.scene.buildIndex, _volume, _delay);
 

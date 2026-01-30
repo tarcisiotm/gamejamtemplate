@@ -1,4 +1,5 @@
-﻿using TG.Core;
+﻿using System;
+using TG.Core;
 using UnityEngine;
 
 namespace TG.GameJamTemplate
@@ -14,10 +15,31 @@ namespace TG.GameJamTemplate
         private bool _canUpdate = true;
         private bool _isLocked = false;
 
-        public delegate void PauseEvent(bool pauseStatus);
-        public static event PauseEvent OnPauseEvent;
+        private GameStateManagerBase gameStateManager;
 
-        private void Start() { }
+        private void OnEnable()
+        {
+            GameStateManagerBase.OnGameStateChanged += OnGameStateChanged;
+
+            if (GameManager.I != null && GameManager.I.Initialized) OnGameManagerInitialized();
+            else GameManager.OnInitialized += OnGameManagerInitialized;
+        }
+
+        private void OnGameManagerInitialized()
+        {
+            gameStateManager = GameManager.I.GetModule<GameStateManagerBase>();
+        }
+
+        private void OnDisable()
+        {
+            GameStateManagerBase.OnGameStateChanged -= OnGameStateChanged;
+        }
+
+        private void OnGameStateChanged(GameState previousGameState, GameState newGameState)
+        {
+            if (newGameState == GameState.Paused) { ShowPauseMenu(); }
+            else if (previousGameState == GameState.Paused) { HidePauseMenu(); }
+        }
 
         private void Update()
         {
@@ -26,24 +48,25 @@ namespace TG.GameJamTemplate
 #if INPUT_LEGACY
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (_isPaused) { UnpauseGame(); } else { PauseGame(); }
+                gameStateManager.Pause(gameStateManager.CurrentState != GameState.Paused);
             }
 #endif
         }
 
-        public void PauseGame()
+        private void ShowPauseMenu()
         {
             _isPaused = true;
-            OnPauseEvent?.Invoke(_isPaused);
-            Time.timeScale = 0;
             _pausePanel.SetActive(true);
         }
 
-        public void UnpauseGame()
+        public void UnpauseUICallback() 
+        {
+            gameStateManager.Pause(false);
+        }
+
+        private void HidePauseMenu()
         {
             _isPaused = false;
-            OnPauseEvent?.Invoke(_isPaused);
-            Time.timeScale = 1;
             _pausePanel.SetActive(false);
         }
 
@@ -62,6 +85,7 @@ namespace TG.GameJamTemplate
         public void ReloadScene()
         {
             if (_isLocked) { return; }
+
             GameManager.I.GetModule<ScenesManager>().ReloadScene();
             _isLocked = true;
         }

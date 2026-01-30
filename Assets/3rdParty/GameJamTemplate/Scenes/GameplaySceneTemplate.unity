@@ -423,6 +423,18 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_RespectSceneVisibilityWhenBakingGI: 0
+--- !u!114 &1415149392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 852024499197295822, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 364450317503695182}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f1e0c7629554b799d891483fb36790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &364450317503695182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,6 +443,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1708013254589378587, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1415149392}
+    - target: {fileID: 1708013254589378587, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708013254589378587, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TG.GameJamTemplate.PauseMenu, GameJamTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708013254589378587, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878800554924678128, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnpauseUICallback
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878800554924678128, guid: 534d010de05e0954ea0888e7d6ba3cdc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TG.GameJamTemplate.PauseMenu, GameJamTemplate
+      objectReference: {fileID: 0}
     - target: {fileID: 2000825034802412829, guid: 534d010de05e0954ea0888e7d6ba3cdc,
         type: 3}
       propertyPath: m_LocalPosition.x

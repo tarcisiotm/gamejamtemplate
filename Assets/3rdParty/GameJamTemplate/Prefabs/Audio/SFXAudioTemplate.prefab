@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4587516420027129154}
-  - component: {fileID: 1859320111755919112}
+  - component: {fileID: 1204437601390751617}
   - component: {fileID: 1024841419059096671}
   m_Layer: 0
   m_Name: SFXAudioTemplate
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1859320111755919112
+--- !u!114 &1204437601390751617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,15 +42,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6882589028417307377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1809871e51b3f425e873e11fd13c0770, type: 3}
+  m_Script: {fileID: 11500000, guid: 46cd1082d9a8d4f66aea84960e30a00d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: TG.Audio::TG.Core.Audio.AudioBase
   audioSource: {fileID: 1024841419059096671}
   behaviorSet: {fileID: 11400000, guid: 825afdc8276346e4dbf4c2596154b779, type: 2}
   fadesWhenSceneUnloads: 1
   fadeInVolume: 0
-  sceneUnloadBehaviour: 0
-  _destroyWhenDone: 0
 --- !u!82 &1024841419059096671
 AudioSource:
   m_ObjectHideFlags: 0

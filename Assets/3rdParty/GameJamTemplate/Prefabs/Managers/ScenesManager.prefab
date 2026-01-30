@@ -1006,7 +1006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: TGCore::TG.Core.ScenesManager
   _minLoadTime: 0
-  _mainMenuSceneBuildIndex: 1
+  _mainMenuSceneBuildIndex: 2
+  sceneTransition: {fileID: 6473090447806647375}
 --- !u!1 &9068331605546599277
 GameObject:
   m_ObjectHideFlags: 0

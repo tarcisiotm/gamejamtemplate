@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a652362943c9504a9ccd78b66ac1d46, type: 3}
-  m_Name: Audio Disable When Done Behaviour
-  m_EditorClassIdentifier: TG.Audio::TG.Core.Audio.AudioDisableWhenDoneBehaviour
-  destroyWhenDone: 0
+  m_Script: {fileID: 11500000, guid: 75b1c25d9ba7af844b26744a2fd4a31e, type: 3}
+  m_Name: AB Scene Unload Fade
+  m_EditorClassIdentifier: TG.Audio::TG.Core.Audio.AudioSceneUnloadFadeOutBehaviour
+  fadeOutDuration: 0.5

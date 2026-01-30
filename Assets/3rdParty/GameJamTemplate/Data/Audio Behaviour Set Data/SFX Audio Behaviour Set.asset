@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5084d950dedfe40ba4d65f7f35b8ec, type: 3}
   m_Name: SFX Audio Behaviour Set
   m_EditorClassIdentifier: TG.Audio::TG.Core.Audio.AudioBehaviorSet
+  playbackBehaviour: {fileID: 11400000, guid: 920423ce51edcbe49908e4c46882f772, type: 2}
   playbackEndedBehaviour: {fileID: 11400000, guid: 34d2503eac3cd4a4b802a05a9087c523,
     type: 2}
   sceneUnloadBehaviour: {fileID: 0}
