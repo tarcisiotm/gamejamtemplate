@@ -24,6 +24,12 @@ To use the legacy system, no change is needed. To change to the new Input:
 
 ## Games made using this Template
 
-Dimensions: https://github.com/tarcisiotm/GGJ2021-LostAndFound
-Way Back Home: https://github.com/tarcisiotm/GGJ2021-LostAndFound
-O Jardim: https://github.com/tarcisiotm/ldjam46
+- Dimensions: https://github.com/tarcisiotm/GGJ2021-LostAndFound
+- Way Back Home: https://github.com/tarcisiotm/GGJ2021-LostAndFound
+- O Jardim: https://github.com/tarcisiotm/ldjam46
+- Bloby and the Missing Link: https://github.com/tarcisiotm/gmtk-2021
+- Ms. Death Awaits: https://github.com/tarcisiotm/ldjam-50
+- Voxel Defenders: https://github.com/tarcisiotm/ldjam-51
+- Summon Kid: https://github.com/tarcisiotm/ldjam-55/
+
+All of these games can be played at: [Tarcisio's Portfolio](https://tarcisiocosta.com) 
