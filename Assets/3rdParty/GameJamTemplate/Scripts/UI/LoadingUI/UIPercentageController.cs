@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using TG.Core;
+using System;
 
 namespace TG.GameJamTemplate
 {
@@ -40,6 +41,7 @@ namespace TG.GameJamTemplate
         private void SetImage(float perc)
         {
             if (_loadingImage == null || _loadingImage.type != Image.Type.Filled) { return; }
+
             _loadingImage.fillAmount = Mathf.Clamp01(perc);
         }
     }
