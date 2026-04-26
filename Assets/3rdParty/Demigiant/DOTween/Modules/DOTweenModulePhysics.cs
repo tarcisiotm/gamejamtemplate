@@ -1,7 +1,7 @@
 ﻿// Author: Daniele Giardini - http://www.demigiant.com
 // Created: 2018/07/13
 
-#if true // MODULE_MARKER
+#if !DOTWEEN_NOPHYSICS // MODULE_MARKER
 using System;
 using DG.Tweening.Core;
 using DG.Tweening.Core.Enums;
@@ -135,7 +135,7 @@ namespace DG.Tweening
         /// If you plan to publish there you should use a regular transform.DOPath.</para></summary>
         /// <param name="path">The waypoints to go through</param>
         /// <param name="duration">The duration of the tween</param>
-        /// <param name="pathType">The type of path: Linear (straight path) or CatmullRom (curved CatmullRom path)</param>
+        /// <param name="pathType">The type of path: Linear (straight path), CatmullRom (curved CatmullRom path) or CubicBezier (curved with control points)</param>
         /// <param name="pathMode">The path mode: 3D, side-scroller 2D, top-down 2D</param>
         /// <param name="resolution">The resolution of the path (useless in case of Linear paths): higher resolutions make for more detailed curved paths but are more expensive.
         /// Defaults to 10, but a value of 5 is usually enough if you don't have dramatic long curves between waypoints</param>
@@ -160,7 +160,7 @@ namespace DG.Tweening
         /// If you plan to publish there you should use a regular transform.DOLocalPath.</para></summary>
         /// <param name="path">The waypoint to go through</param>
         /// <param name="duration">The duration of the tween</param>
-        /// <param name="pathType">The type of path: Linear (straight path) or CatmullRom (curved CatmullRom path)</param>
+        /// <param name="pathType">The type of path: Linear (straight path), CatmullRom (curved CatmullRom path) or CubicBezier (curved with control points)</param>
         /// <param name="pathMode">The path mode: 3D, side-scroller 2D, top-down 2D</param>
         /// <param name="resolution">The resolution of the path: higher resolutions make for more detailed curved paths but are more expensive.
         /// Defaults to 10, but a value of 5 is usually enough if you don't have dramatic long curves between waypoints</param>
